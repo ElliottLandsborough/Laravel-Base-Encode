@@ -18,7 +18,7 @@ class Baser
     }
 
     // enable bcmath
-    public function bcMAth()
+    public function bcMath()
     {
         $this->bcmath = true;
         return $this;
