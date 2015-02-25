@@ -4,14 +4,20 @@ namespace Elliottlan\LaravelBaser;
 
 class Baser
 {
-    // changing this will break all current urls
-    const CODESET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // set default codeset
+    private $codeset = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    // set a codeset - e.g 'ABCEFGHKMNPRSTUVW1235789'
+    public static function setCodeset($codeset)
+    {
+        self::$codeset = $codeset;
+    }
 
     // create a unique string for any whole number
     public static function getTokenFromInt($n = false, $bcmath = false)
     {
         $bcmath = false;
-        $codeset = self::CODESET;
+        $codeset = self::$codeset;
         $base = strlen($codeset);
         $converted = '';
         if (!$bcmath) {
@@ -30,7 +36,7 @@ class Baser
 
     public static function getIntFromToken($code, $bcmath = false)
     {
-        $codeset = self::CODESET;
+        $codeset = self::$codeset;
         $base = strlen($codeset);
         if (!$bcmath) {
             $c = 0;
