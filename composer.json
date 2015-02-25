@@ -1,0 +1,25 @@
+{
+    "name": "elliottlan/laravel-baser",
+    "description": "Encode and decode integers with your own specified base!",
+    "keywords": ["laravel", "base", "encode"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Elliott Landsborough",
+            "email": "elliott.landsborough@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Elliottlan\\LaravelBaser\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
