@@ -9,7 +9,7 @@
 
 #### Limits
 
- - Currently only supports integers between 0 and 100000000000000000000000000000 (on 64 bit machines - won'e be testing 32bit any time soon)
+ - Currently only supports integers from 1 to 100000000000000000000000000000 (on 64 bit machines - won't be testing 32bit any time soon)
 
 #### Installation
 
