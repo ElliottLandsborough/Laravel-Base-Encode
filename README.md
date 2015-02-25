@@ -11,7 +11,7 @@
 
 #### Limits
 
- - Currently only supports integers from 1 to 100000000000000000000000000000 (on 64 bit machines - won't be testing 32bit any time soon)
+ - Currently only supports integers from 1 to 100000000000000000000000000000 (on 64 bit machines)
 
 #### Installation
 
@@ -33,9 +33,9 @@ echo Baser::getTokenFromInt(436432278698); // 7GnTmBA
 echo Baser::getIntFromToken('7GnTmBA'); // 436432278698
 ```
 
-##### Use php-bcmath
+##### Use big maths (requires php-bcmatch)
 ```php
-Baser::bcMath();
+Baser::bcMath(); // calculate above the 32bit limit on old machines
 echo Baser::getTokenFromInt('19598531548'); // lolrly
 echo Baser::getIntFromToken('lolrly'); // 19598531548
 ```
