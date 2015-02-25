@@ -33,7 +33,7 @@ echo Baser::getTokenFromInt(436432278698); // 7GnTmBA
 echo Baser::getIntFromToken('7GnTmBA'); // 436432278698
 ```
 
-##### Use big maths (requires php-bcmatch)
+##### Use big maths (requires php-bcmath)
 ```php
 Baser::bcMath(); // calculate above the 32bit limit on old machines
 echo Baser::getTokenFromInt('19598531548'); // lolrly
