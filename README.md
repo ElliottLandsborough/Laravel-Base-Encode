@@ -35,16 +35,21 @@ echo Baser::getIntFromToken('7GnTmBA'); // 436432278698
 
 ##### Use big maths (requires php-bcmath)
 ```php
-Baser::bcMath(); // calculate above the 32bit limit on old machines
-echo Baser::getTokenFromInt(19598531548); // lolrly
-echo Baser::getIntFromToken('lolrly'); // 19598531548
+// calculate above the 32bit limit on old machines
+echo Baser::bcMath()->getTokenFromInt(19598531548); // lolrly
+echo Baser::bcMath()->getIntFromToken('lolrly'); // 19598531548
 ```
 
 ##### Define a codeset and encode/decode
 ```php
-Baser::setCodeset('ABCEFGHKMNPRSTUVW1235789'); // set codeset to 'ABCEFGHKMNPRSTUVW1235789'
-echo Baser::getTokenFromInt(646464); // B82MA
-echo Baser::getIntFromToken('B82MA'); // 646464
+// set codeset to 'ABCEFGHKMNPRSTUVW1235789'
+echo Baser::setCodeset('ABCEFGHKMNPRSTUVW1235789')->getTokenFromInt(646464); // B82MA
+echo Baser::setCodeset('ABCEFGHKMNPRSTUVW1235789')->getIntFromToken('B82MA'); // 646464
+```
+
+#### everything
+```php
+echo Baser::setCodeset('ABC')->bcMath()->getTokenFromInt(1337);
 ```
 
 ##### Simple URL Shortening service using this package
