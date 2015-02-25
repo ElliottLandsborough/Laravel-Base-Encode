@@ -5,30 +5,36 @@ namespace Elliottlan\LaravelBaser;
 class Baser
 {
     // set default codeset
-    private static $codeset = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    protected $codeset = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     // enabled bcmath functions
-    private static $bcmath = false;
+    protected $bcmath = false;
+
+    //
+    protected $token;
+    protected $int;
 
     // set a codeset - e.g 'ABCEFGHKMNPRSTUVW1235789'
-    public static function setCodeset($codeset)
+    public function setCodeset($codeset)
     {
-        self::$codeset = $codeset;
+        $this->codeset = $codeset;
+        return $this;
     }
 
     // enable bcmath
-    public static function bcMAth()
+    public function bcMAth()
     {
-        self::$bcmath = true;
+        $this->bcmath = true;
+        return $this;
     }
 
     // create a unique string for any whole number
-    public static function getTokenFromInt($n = false)
+    public function getTokenFromInt($n = false)
     {
-        $codeset = self::$codeset;
+        $codeset = $this->codeset;
         $base = strlen($codeset);
         $converted = '';
-        if (!self::$bcmath) {
+        if (!$this->bcmath) {
             while ($n > 0) {
                 $converted = substr($codeset, ($n % $base), 1) . $converted;
                 $n = floor($n/$base);
@@ -42,11 +48,11 @@ class Baser
         return $converted;
     }
 
-    public static function getIntFromToken($code = false)
+    public function getIntFromToken($code = false)
     {
-        $codeset = self::$codeset;
+        $codeset = $this->codeset;
         $base = strlen($codeset);
-        if (!self::$bcmath) {
+        if (!$this->bcmath) {
             $c = 0;
             for ($i = strlen($code); $i; $i--) {
                 $c += strpos($codeset, substr($code, (-1 * ( $i - strlen($code) )), 1)) * pow($base, $i-1);
