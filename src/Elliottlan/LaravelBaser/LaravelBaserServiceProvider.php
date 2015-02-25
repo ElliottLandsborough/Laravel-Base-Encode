@@ -36,7 +36,7 @@ class LaravelBaserServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('Baser', function ($app) {
+        $this->app->bindShared('baser', function ($app) {
 
             return new Baser();
 
