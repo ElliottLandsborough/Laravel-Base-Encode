@@ -31,15 +31,16 @@ echo Baser::getTokenFromInt(436432278698); // 7GnTmBA
 echo Baser::getIntFromToken('7GnTmBA'); // 436432278698
 ```
 
-#### Define a codeset and encode/decode
+##### Use php-bcmath
 ```php
-Baser::setCodeset('ABCEFGHKMNPRSTUVW1235789'); // set codeset to 'ABCEFGHKMNPRSTUVW1235789'
-echo Baser::getTokenFromInt(646464);
-echo Baser::getIntFromToken('1m5q', true);
+Baser::bcMath();
+echo Baser::getTokenFromInt('19598531548'); // lolrly
+echo Baser::getIntFromToken('lolrly'); // 19598531548
 ```
 
-##### Encode/Decode using bcmath (will increase maximum limit on 32bit - requires php-bcmath)
+##### Define a codeset and encode/decode
 ```php
-echo Baser::getTokenFromInt(323232, true); // ???
-echo Baser::getIntFromToken('1m5q', true); // ???
+Baser::setCodeset('ABCEFGHKMNPRSTUVW1235789'); // set codeset to 'ABCEFGHKMNPRSTUVW1235789'
+echo Baser::getTokenFromInt(646464); // B82MA
+echo Baser::getIntFromToken('1m5q', true); // 646464
 ```
