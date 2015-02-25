@@ -35,7 +35,7 @@ class Baser
                 $converted = substr($codeset, ($n % $base), 1) . $converted;
                 $n = floor($n/$base);
             }
-        } else {
+        } else if (self::bcmathInstalled()) {
             while ($n > 0) {
                 $converted = substr($codeset, bcmod($n, $base), 1) . $converted;
                 $n = self::bcFloor(bcdiv($n, $base));
@@ -54,13 +54,19 @@ class Baser
                 $c += strpos($codeset, substr($code, (-1 * ( $i - strlen($code) )), 1)) * pow($base, $i-1);
             }
             return $c;
-        } else {
+        } else if (self::bcmathInstalled()) {
             $c = '0';
             for ($i = strlen($code); $i; $i--) {
                 $c = bcadd($c, bcmul(strpos($codeset, substr($code, (-1 * ( $i - strlen($code) )), 1)), bcpow($base, $i-1)));
             }
             return bcmul($c, 1, 0);
         }
+    }
+
+    // check if php-bcmath is installed - otherwise die
+    private static function bcmathInstalled()
+    {
+        return (function_exists('bcadd') ? true : die('bcmath is not installed'));
     }
 
     // floor using bcmath
