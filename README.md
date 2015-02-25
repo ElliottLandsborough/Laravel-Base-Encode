@@ -44,3 +44,8 @@ Baser::setCodeset('ABCEFGHKMNPRSTUVW1235789'); // set codeset to 'ABCEFGHKMNPRST
 echo Baser::getTokenFromInt(646464); // B82MA
 echo Baser::getIntFromToken('1m5q', true); // 646464
 ```
+
+##### Simple URL Shortening service using this package
+[Controller](https://github.com/ElliottLandsborough/Laravel-5-URL-Shorterner/blob/master/app/Http/Controllers/UrlController.php)
+[Model](https://github.com/ElliottLandsborough/Laravel-5-URL-Shorterner/blob/master/app/Url.php)
+[Migration](https://github.com/ElliottLandsborough/Laravel-5-URL-Shorterner/blob/master/database/migrations/2015_02_13_221304_create_url_table.php)
