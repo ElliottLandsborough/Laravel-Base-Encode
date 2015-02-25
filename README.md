@@ -14,7 +14,7 @@
 ## How to
 
  - 
- - Providers - 'Elliottlan\LaravelShorturl\LaravelBaserServiceProvider'
- - Aliases - 'Baser' => 'Elliottlan\LaravelBaser\Facades\Shorturl',
+ - Providers - 'Elliottlan\LaravelBaser\LaravelBaserServiceProvider'
+ - Aliases - 'Baser' => 'Elliottlan\LaravelBaser\Facades\Baser',
  - ...
  - Profit?
