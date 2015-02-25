@@ -10,10 +10,6 @@ class Baser
     // enabled bcmath functions
     protected $bcmath = false;
 
-    //
-    protected $token;
-    protected $int;
-
     // set a codeset - e.g 'ABCEFGHKMNPRSTUVW1235789'
     public function setCodeset($codeset)
     {
