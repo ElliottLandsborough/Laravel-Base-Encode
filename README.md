@@ -1,4 +1,4 @@
-## Laravel Baser
+# Laravel Baser
 
 ### Encode and decode integers with your own specified base!
 
