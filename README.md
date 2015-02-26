@@ -44,7 +44,7 @@ echo Baser::getIntFromToken('lolrly'); // 19598531548
 ```php
 Baser::setCodeset('ABCEFGHKMNPRSTUVW1235789'); // set codeset to 'ABCEFGHKMNPRSTUVW1235789'
 echo Baser::getTokenFromInt(646464); // B82MA
-echo Baser::getIntFromToken('1m5q', true); // 646464
+echo Baser::getIntFromToken('B82MA'); // 646464
 ```
 
 ##### Simple URL Shortening service using this package
