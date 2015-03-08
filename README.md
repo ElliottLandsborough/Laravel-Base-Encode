@@ -1,6 +1,6 @@
 # Laravel Baser
 
-### Encode and decode integers with your own specified base!
+### Base encode and decode integers with your own specified base
 
 [View the package](https://packagist.org/packages/elliottlan/laravel-baser) at packagist.org
 
