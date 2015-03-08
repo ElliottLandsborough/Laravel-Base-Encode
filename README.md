@@ -47,7 +47,7 @@ echo Baser::setCodeset('ABCEFGHKMNPRSTUVW1235789')->getTokenFromInt(646464); // 
 echo Baser::setCodeset('ABCEFGHKMNPRSTUVW1235789')->getIntFromToken('B82MA'); // 646464
 ```
 
-#### everything
+##### Everything
 ```php
 echo Baser::setCodeset('ABC')->bcMath()->getTokenFromInt(1337);
 ```
