@@ -15,28 +15,21 @@ class LaravelBaserServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap the application events.
-     *
-     * @return void
      */
     public function boot()
     {
-
     }
 
     /**
      * Register the service provider.
-     *
-     * @return void
      */
     public function register()
     {
-        $this->app->bindShared('baser', function ($app) {
-
+        $this->app->singleton('baser', function ($app) {
             return new Baser();
-
         });
 
-        $this->app->bind('Elliottlan\LaravelBaser\Baser', function($app) {
+        $this->app->bind('Elliottlan\LaravelBaser\Baser', function ($app) {
             return $app['baser'];
         });
     }
