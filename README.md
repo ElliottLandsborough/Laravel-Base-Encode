@@ -14,12 +14,26 @@
  - Currently only supports integers from 1 to 100000000000000000000000000000 (on 64 bit machines)
 
 #### Installation
-
- - composer.json - "elliottlan/laravel-baser": "dev-master"
- - Providers - 'Elliottlan\LaravelBaser\LaravelBaserServiceProvider'
- - Aliases - 'Baser' => 'Elliottlan\LaravelBaser\Facades\Baser',
- - ???
- - Profit.
+1. Include the composer package
+```
+composer require elliottlan/laravel-baser
+```
+2. Add this line to 'Providers' in config/app.php
+```
+Elliottlan\LaravelBaser\LaravelBaserServiceProvider::class,
+```
+3. Add this line to 'Aliases' in config/app.php
+```
+'Baser' => Elliottlan\LaravelBaser\Facades\Baser::class,
+```
+4. Use 'Base' at the top of a controller
+```
+use Baser;
+```
+5. Try an example out
+```
+echo Baser::getTokenFromInt(436432278698); // 7GnTmBA
+```
 
 #### Usage examples
 
